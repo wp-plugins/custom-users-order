@@ -1,5 +1,6 @@
 === Custom Users Order  ===
 Contributors: nidhiparikh,hiren1612
+Donate link: https://www.paypal.com/in/cgi-bin/webscr?cmd=_flow&SESSION=vqS4Oi4xvxh2XmU8_uLGf2AiEGEsp55Gi0HALD-rruxvd42H_-FRfJWelya&dispatch=5885d80a13c0db1f8e263663d3faee8def8934b92a630e40b7fef61ab7e9fe63
 Tags: order, users, custom,listing, list, customize
 Requires at least: 3.0.1
 Tested up to: 3.7.1
