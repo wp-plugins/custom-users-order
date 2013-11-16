@@ -1,10 +1,10 @@
 <?php
 /* Plugin Name: Custom Users Order 
-Plugin URI: 
+Plugin URI: http://wordpress.org/plugins/custom-users-order/
 Description: Orders all the users with simple Drag and Drop Sortable capability.
-Version: Version 1.0
+Version: 1.0
 Author: Nidhi Parikh, Hiren Patel
-Author URI: 
+Author URI: http://www.betterinfo.in/hiren-patel
 License: GPLv2 or later
 */
 
