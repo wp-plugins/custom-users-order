@@ -1,5 +1,5 @@
 === Custom Users Order  ===
-Contributors: Nidhi Parikh, Hiren Patel
+Contributors: nidhiparikh,hiren1612
 Tags: order, users, custom,listing, list, customize
 Requires at least: 3.0.1
 Tested up to: 3.6
