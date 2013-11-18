@@ -27,5 +27,6 @@ This plugin will order all the users with simple Drag and Drop Sortable capabili
 
 
 == Screenshots ==
-1. Users Listing. Here you can order users by simple drag and drop functionality.
-
+1. After activating the plugin it will be hooked in Users Menu.
+2. Users Listing. Here you can order users by simple drag and drop functionality.
+3. Frontend display.

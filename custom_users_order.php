@@ -96,35 +96,60 @@ function customuserorder()
     
     <div class='wrap'>
         <form name="frmCustomUser" method="post" action="?page=customuserorder">
-            <h2><?php _e('Custom Users Order', 'customuserorder') ?></h2>   
+            <h2><?php _e('Custom Users Order', 'customuserorder') ?></h2>  
+            <div class="customusercontainer"> 
+           	<ul class="usersheading">
+            	<li class="lineitem"><span class=''>Username</span><span>Name</span><span>Email</span><span>Role</span></li>
+            </ul>
             <ul id="UserOrderList">
+
 			<?php 
 			$options=get_option( 'authordetails');
 			$metadetails= explode(",", $options);
 			
 			for($i=0;$i<count($metadetails);$i++)
 			{
-				if($metadetails[0]!='')
+				//echo get_the_author_meta( 'user_login', $metadetails[$i] );
+				if(get_the_author_meta( 'user_login', $metadetails[$i] ))
 				{
-					echo "<li id='".$metadetails[$i]."' class='lineitem'>" .get_the_author_meta( 'display_name', $metadetails[$i] ). "</li>";
+					$userrole = new WP_User($metadetails[$i]);
+				//	echo $userrole->roles[0];
+					if($metadetails[0]!='')
+					{
+						echo "<li id='".$metadetails[$i]."' class='lineitem'><span>" .get_the_author_meta( 'display_name', $metadetails[$i] ). "</span><span>".get_the_author_meta( 'first_name', $metadetails[$i] )." ".get_the_author_meta( 'last_name', $metadetails[$i] )."</span><span>".get_the_author_meta( 'user_email', $metadetails[$i] )."</span><span class='userrole'>".$userrole->roles[0]."</span></li>";
+						
+					}
 				}
-			}
+				else
+				{						
+						$updatestring = get_option( 'authordetails');
+						$string = str_replace($metadetails[$i].',', "", $updatestring.',');
+						$string = substr($string,0, -1);
+						update_option( 'authordetails', $string); 
+					
+				}
+				}
+				$results = get_users();
+				
+				foreach( $results as $user )
+					if (!(in_array($user->data->ID , $metadetails)))
+					{
+						$userrole = new WP_User($user->data->ID);
+						echo "<li id='{$user->data->ID}' class='lineitem'><span>" .get_the_author_meta( 'display_name', $user->data->ID ). "</span><span>".get_the_author_meta( 'first_name', $user->data->ID )." ".get_the_author_meta( 'last_name', $user->data->ID )."</span><span>".get_the_author_meta( 'user_email',$user->data->ID )."</span><span class='userrole'>".$userrole->roles[0]."</span></li>";
+					}	
 			
-            $results = get_users();
-            foreach( $results as $user )
-				if (!(in_array($user->data->ID , $metadetails)))
-				{
-					echo "<li id='{$user->data->ID}' class='lineitem'>" . $user->data->display_name . "</li>";
-				}
+			
+			
             ?>
             
             </ul>
+            </div> <!-- customusercontainer -->
             <input type="hidden" name="usersid" />
             <input type="submit" name='send' value="Update" id='send' class="button-primary" />
         </form>
        	<p><b>Note: </b> Simply drag and drop the users into the desired position and update.</p>
         <p>Place shortcode <b>[author_listing users=2]</b> in wordpress page, post or text widget.</p>
-        <p>Place the code <b><?php do_shortcode('[author_listing users=2]'); ?></b> in template files.</p>
+        <p>Place the code <b><&#63;php do_shortcode('[author_listing users=2]'); ?></b> in template files.</p>
     </div>
 <?php
 }
