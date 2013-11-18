@@ -1,5 +1,6 @@
 === Custom Users Order  ===
 Contributors: nidhiparikh,hiren1612
+Donate link: http://www.betterinfo.in/hiren-patel/
 Tags: order, users, custom,listing, list, customize
 Requires at least: 3.0.1
 Tested up to: 3.7.1
@@ -18,7 +19,7 @@ This plugin will order all the users with simple Drag and Drop Sortable capabili
 
 
 == Installation ==
-1. Upload "custom_users_order.php" to the "/wp-content/plugins/" directory.
+1. Upload "custom_users_order" to the "/wp-content/plugins/" directory.
 2. Activate the plugin through the "Plugins" menu in WordPress.
 3. Place shortcode [author_listing users=2] in wordpress page, post or text widget, where in the users parameter you can pass the number of users you want to display in frontend. 5 users will be displayed by default .
 4. Place the code `<?php do_shortcode('[author_listing users=2]'); ?>` in template files, where in the users parameter you pass the number of users you want to display in frontend. 5 users will be displayed by default .
@@ -26,5 +27,6 @@ This plugin will order all the users with simple Drag and Drop Sortable capabili
 
 
 == Screenshots ==
-1. Users Listing. Here you can order users by simple drag and drop functionality.
-
+1. After activating the plugin it will be hooked in Users Menu.
+2. Users Listing. Here you can order users by simple drag and drop functionality.
+3. Frontend display.
