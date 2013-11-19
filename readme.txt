@@ -1,7 +1,7 @@
 === Custom Users Order  ===
 Contributors: nidhiparikh,hiren1612
 Donate link: http://www.betterinfo.in/hiren-patel/
-Tags: order, users, custom,listing, list, customize
+Tags: order, users, custom,listing, list, customize, drag-and-drop, ajax, manage, menu_order, ordering, re-order
 Requires at least: 3.0.1
 Tested up to: 3.7.1
 Stable tag: 4.5
