@@ -8,8 +8,8 @@ Author URI: http://www.betterinfo.in/hiren-patel
 License: GPLv2 or later
 */
 
-register_activation_hook(__FILE__,'author_order');
-function author_order(){
+register_activation_hook(__FILE__,'user_order');
+function user_order(){
 	/* Function to add option name in wp_options table */
 	$all_user_datas=get_users(); 
 	$all_user_ids = "";
@@ -17,18 +17,25 @@ function author_order(){
 		$all_user_ids = $all_user_ids.','.$user->ID;
 	}
 	$all_user_ids = substr($all_user_ids, 1);
-	add_option("authordetails", $all_user_ids); 
+	add_option("usersdetails", $all_user_ids); 
 }
-add_action('user_register', 'update_authordetails');
+add_action('user_register', 'update_user_details');
 
-function update_authordetails($user_id){
-	$users = get_option('authordetails');
-	update_option("authordetails", $users.','.$user_id);
+function update_user_details($user_id){
+	$users = get_option('usersdetails');
+	update_option("usersdetails", $users.','.$user_id);
 }
-register_uninstall_hook(__FILE__,'author_uninstall');
+add_action( 'delete_user', 'delete_user' );
+function delete_user($user_id){
+	$updatestring = get_option( 'usersdetails');
+	$string = str_replace($user_id.',', "", $updatestring.',');
+	$string = substr($string,0, -1);
+	update_option( 'usersdetails', $string); 
+}
+register_uninstall_hook(__FILE__,'user_uninstall');
 
-function author_uninstall(){
-	delete_option('authordetails');
+function user_uninstall(){
+	delete_option('usersdetails');
 }
 add_action('admin_menu', 'manageuser');
 
@@ -50,8 +57,8 @@ function custom_display_style() {
 add_action( 'wp_enqueue_scripts', 'custom_display_style' );
 add_filter('widget_text', 'do_shortcode');
 
-function author_listing($atts){
-	$options=get_option('authordetails');
+function users_listing($atts){
+	$options=get_option('usersdetails');
 	$user_id = explode(",", $options);
 	if($atts[users]==""){$atts['users']=5;}  
 	$wp_total_users_array= count_users();
@@ -74,13 +81,13 @@ function author_listing($atts){
 	$plugin_content = $plugin_content. '</div>'; /*User info ends */
 	return "{$plugin_content}";
 }
-add_shortcode('users_order','author_listing');
+add_shortcode('users_order','users_listing');
 
 function customuserorder(){
 	global $wpdb;
 	if($_REQUEST['usersid']!=""){	
 		$usersid = $_REQUEST['usersid'];
-		update_option( 'authordetails', $usersid ); 
+		update_option( 'usersdetails', $usersid ); 
 	}?>
     <div class='wrap'>
         <form name="frmCustomUser" method="post" action="?page=customuserorder">
@@ -91,7 +98,7 @@ function customuserorder(){
 				</ul>
 				<ul id="UserOrderList">
 					<?php 
-					$options=get_option( 'authordetails');
+					$options=get_option( 'usersdetails');
 					$metadetails= explode(",", $options);
 					for($i=0;$i<count($metadetails);$i++){
 						if(get_the_author_meta( 'user_login', $metadetails[$i] )){
@@ -101,10 +108,10 @@ function customuserorder(){
 							}
 						}
 						else{					
-								$updatestring = get_option( 'authordetails');
+								$updatestring = get_option( 'usersdetails');
 								$string = str_replace($metadetails[$i].',', "", $updatestring.',');
 								$string = substr($string,0, -1);
-								update_option( 'authordetails', $string); 
+								update_option( 'usersdetails', $string); 
 							
 						}
 					}
@@ -120,8 +127,8 @@ function customuserorder(){
             <input type="submit" name='send' value="Update" id='send' class="button-primary" />
         </form>
        	<p><b>Note: </b> Simply drag and drop the users into the desired position and update.</p>
-        <p>Place shortcode <b>[author_listing users=2]</b> in wordpress page, post or text widget.</p>
-        <p>Place the code <b><&#63;php do_shortcode('[author_listing users=2]'); ?></b> in template files.</p>
+        <p>Place shortcode <b>[users_order users=2]</b> in wordpress page, post or text widget.</p>
+        <p>Place the code <b><&#63;php do_shortcode('[users_order users=2]'); ?></b> in template files.</p>
     </div>
 <?php
 }
