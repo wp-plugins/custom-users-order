@@ -74,7 +74,7 @@ function author_listing($atts){
 	$plugin_content = $plugin_content. '</div>'; /*User info ends */
 	return "{$plugin_content}";
 }
-add_shortcode('author_listing','author_listing');
+add_shortcode('users_order','author_listing');
 
 function customuserorder(){
 	global $wpdb;
