@@ -16,15 +16,18 @@ This plugin will order all the users with simple Drag and Drop Sortable capabili
 1. Quick and easy drag and drop for rearranging of users
 2. Set the number of users to display in frontend.
 
+= Usage =
+Place this shortcode in page, post or text widget where you'd like to display a list of all users.
 
+`
+[author_listing]
+`
 
 == Installation ==
 1. Upload "custom_users_order" to the "/wp-content/plugins/" directory.
 2. Activate the plugin through the "Plugins" menu in WordPress.
 3. Place shortcode [author_listing users=2] in wordpress page, post or text widget, where in the users parameter you can pass the number of users you want to display in frontend. 5 users will be displayed by default .
 4. Place the code `<?php do_shortcode('[author_listing users=2]'); ?>` in template files, where in the users parameter you pass the number of users you want to display in frontend. 5 users will be displayed by default .
-
-
 
 == Screenshots ==
 1. After activating the plugin it will be hooked in Users Menu.
