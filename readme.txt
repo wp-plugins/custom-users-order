@@ -33,7 +33,7 @@ Custom Users Order plugin supports the "users" parameter where you can pass the 
 By default it displays 5 users.
 
 
-= Templates=
+= Templates =
 
 Place this shortcode in any template parts of your theme.
 
@@ -42,10 +42,11 @@ Place this shortcode in any template parts of your theme.
 `
 
 == Installation ==
+= Installation =
 1. Upload "custom_users_order" to the "/wp-content/plugins/" directory.
 2. Activate the plugin through the "Plugins" menu in WordPress.
 
-== How to Use ==
+= How to Use =
 1. Place shortcode [users_order users=2] in wordpress page, post or text widget, where in the users parameter you can pass the number of users you want to display in frontend. 5 users will be displayed by default .
 2. Place the code `<?php do_shortcode('[users_order users=2]'); ?>` in template files, where in the users parameter you pass the number of users you want to display in frontend. 5 users will be displayed by default .
 
