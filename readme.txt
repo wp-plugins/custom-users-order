@@ -38,7 +38,7 @@ By default it displays 5 users.
 Place this shortcode in any template parts of your theme.
 
 `
-<?php do_shortcode('[users_order users=3]'); ?>
+<?php echo do_shortcode('[users_order users=3]'); ?>
 `
 
 == Installation ==
@@ -48,7 +48,7 @@ Place this shortcode in any template parts of your theme.
 
 = How to Use =
 1. Place shortcode [users_order users=2] in wordpress page, post or text widget, where in the users parameter you can pass the number of users you want to display in frontend. 5 users will be displayed by default .
-2. Place the code `<?php do_shortcode('[users_order users=2]'); ?>` in template files, where in the users parameter you pass the number of users you want to display in frontend. 5 users will be displayed by default .
+2. Place the code `<?php echo do_shortcode('[users_order users=2]'); ?>` in template files, where in the users parameter you pass the number of users you want to display in frontend. 5 users will be displayed by default .
 
 == Frequently Asked Questions ==
 

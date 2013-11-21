@@ -128,7 +128,7 @@ function customuserorder(){
         </form>
        	<p><b>Note: </b> Simply drag and drop the users into the desired position and update.</p>
         <p>Place shortcode <b>[users_order users=2]</b> in wordpress page, post or text widget.</p>
-        <p>Place the code <b><&#63;php do_shortcode('[users_order users=2]'); ?></b> in template files.</p>
+        <p>Place the code <b><&#63;php echo do_shortcode('[users_order users=2]'); ?></b> in template files.</p>
     </div>
 <?php
 }
