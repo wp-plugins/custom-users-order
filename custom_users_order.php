@@ -131,5 +131,5 @@ function customuserorder(){
         <p>Place the code <b><&#63;php echo do_shortcode('[users_order users=2]'); ?></b> in template files.</p>
     </div>
 <?php
-}
+} 
 ?>
