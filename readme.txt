@@ -11,11 +11,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 A plugin which allows you to order the users with simple Drag and Drop Sortable capability.
 
 == Description ==
-Custom Users Order plugin will order users(admin, editor, author, subscriber, contributor) with simple Drag and Drop Sortable capability. Place a shortcode in page, post,text widget or template files to display in frontend. It's that simple. 
+Custom Users Order plugin will order users(admin, editor, author, subscriber, contributor) with simple Drag and Drop Sortable capability. Place a shortcode in page, post,text widget or template files to display in front-end. It's that simple. 
 
 1. Quick and easy drag and drop for rearranging of users.
-2. Set the number of users to display in frontend.
-3. User can add different list of users
+2. Set the number of users to display in front-end.
+3. Choose the users of specific roles to be displayed.
+3. User can add different list of users.
 
 = Usage =
 
@@ -26,10 +27,10 @@ Place this shortcode in page, post or text widget where you'd like to display us
 `
 = Parameters =
 
-Custom Users Order plugin supports the "users" parameter where you can pass the number of users you want to display in frontend. For example if you want to display 3 users at a time then place the following code:
+Custom Users Order plugin supports the "users" parameter where you can pass the number of users you want to display in frontend and "section" parameter where you can pass the name of the section to be displayed in frontend. For example if you want to display 3 users from Section1 at a time then place the following code:
 
 `
-[users_order users=2 section=section_name]
+[users_order users=3 section=Section1]
 `
 By default it displays 5 users.
 
@@ -39,7 +40,7 @@ By default it displays 5 users.
 Place this shortcode in any template parts of your theme.
 
 `
-<?php echo do_shortcode('[users_order users=2 section=section_name]'); ?>
+<?php echo do_shortcode('[users_order users=3 section=Section1]'); ?>
 `
 
 == Installation ==
@@ -48,22 +49,25 @@ Place this shortcode in any template parts of your theme.
 2. Activate the plugin through the "Plugins" menu in WordPress.
 
 = How to Use =
-1. Place shortcode [users_order users=2 section=section_name] in wordpress page, post or text widget, where in the users parameter you can pass the number of users you want to display in frontend. 5 users will be displayed by default .
-2. Place the code `<?php echo do_shortcode('[users_order users=2 section=section_name]'); ?>` in template files, where in the users parameter you pass the number of users you want to display in frontend. 5 users will be displayed by default .
+1. Place shortcode [users_order users=3 section=section_name] in wordpress page, post or text widget, where in the "users" parameter you can pass the number of users and name of the section in "section" parameter you want to display in frontend. 5 users will be displayed by default .
+2. Place the code `<?php echo do_shortcode('[users_order users=3 section=section_name]'); ?>` in template files, where in the "users" parameter you pass the number of users and name of the section in "section" parameter you want to display in frontend. 5 users will be displayed by default .
 
 == Frequently Asked Questions ==
 
 = Having problems, questions, bugs & suggestions =
-Contact us at http://www.betterinfo.in/hiren-patel/
+Contact us at http://www.betterinfo.in/hiren-patel/ OR
+http://www.visionaryweb.in/
 
 == Screenshots ==
 1. After activating the plugin it will be hooked in Users Menu.
-2. Users Listing. Here you can order users by simple drag and drop functionality.
-3. Frontend display.
+2. Section Listing. Here you can Add/Edit and Delete the sections.
+3. Users Listing. Here you can order users by simple drag and drop functionality. Also feature has been provided to choose the users of a specific roles to be displayed.
+4. Frontend display.
 
 == Changelog ==
 = v1.0 =
 * Initial release version.
 
 = v1.1 =
-* User can add different list of users
+* User can add different list of users.
+* User can select different users from specific roles.
