@@ -9,7 +9,7 @@ jQuery( document ).ready(function() {
 		return true;
 	});
 });
-
+ 
 /**** Function for User Sorting - Drag and Drop ****/
 function orderUsers() {
 	var newOrder = jQuery("#UserOrderList").sortable("toArray");
