@@ -55,7 +55,7 @@ Place this shortcode in any template parts of your theme.
 == Frequently Asked Questions ==
 
 = Having problems, questions, bugs & suggestions =
-Contact us at http://www.betterinfo.in/hiren-patel/ OR
+Contact us at http://www.satvikinfotech.com OR
 http://www.visionaryweb.in/
 
 == Screenshots ==
