@@ -1,6 +1,6 @@
 === Custom Users Order  ===
 Contributors: hiren1612,nidhiparikh
-Donate link: http://www.betterinfo.in/hiren-patel/
+Donate link: http://www.satvikinfotech.com
 Tags: order, reorder, ordering, orderby, manage, manually, display, displaying, profile, profiles, user, users, member, members, author, authors, contributor, contributors, custom, customize, listing, list, drag, drop, easy, simple, widget, page, post, shorcode, sortable
 Requires at least: 3.0.1
 Tested up to: 4.3
