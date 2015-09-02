@@ -55,8 +55,7 @@ Place this shortcode in any template parts of your theme.
 == Frequently Asked Questions ==
 
 = Having problems, questions, bugs & suggestions =
-Contact us at http://www.satvikinfotech.com OR
-http://www.visionaryweb.in/
+Contact us at http://www.satvikinfotech.com
 
 == Screenshots ==
 1. After activating the plugin it will be hooked in Users Menu.
